@@ -1,0 +1,14 @@
+{
+  "name": "proj-nft-marketplace-helpers",
+  "version": "1.0.0",
+  "description": "Examples for calling the query and execute functions of the three contracts for proj-nft-marketplace",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "drew.taylor@philabs.xyz",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@archwayhq/arch3.js": "^0.5.0",
+    "@cosmjs/stargate": "^0.31.3"
+  }
+}
