@@ -1,6 +1,6 @@
 import { coin } from "@cosmjs/stargate";
-import { Client } from './client';
-import { FromAtto } from "./denom";
+import { Client } from '../util/client';
+import { FromAtto } from "../util/denom";
 
 const MARKETPLACE_CONTRACT = process.env.VUE_APP_MARKETPLACE_CONTRACT;
 
