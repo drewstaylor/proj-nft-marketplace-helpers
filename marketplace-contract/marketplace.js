@@ -678,7 +678,7 @@ async function CreateNative(id, token_id, expiration, price, swap_type = SALE, c
  * Finalize and consume swap for native ARCH
  * @param {String} id : ID of swap to finalize
  * @param {Object} swap : (Optional) A swap details object; can be loaded from `Details` entry point
- * @param {SigningCosmWasmClient} client? :  (Optional) instance of signing client
+ * @param {SigningCosmWasmClient} client? : (Optional) instance of signing client
  * @returns {ExecuteResult} : Returns success or error result
  * @see Details
  */
@@ -695,13 +695,13 @@ async function FinishNative(id, swap, client = null) {
         token_id: swap.token_id,
         expires: swap.expires,
         price: swap.price,
-        swap_type: SALE
+        swap_type: swap.swap_type
       }
     };
     // Sender
     let accounts = await client.offlineSigner.getAccounts();
     // Purchase cost
-    let funds = [coin(String(swap.price), client.chainInfo.currencies[0].coinMinimalDenom)];
+    let funds = (swap.swap_type == SALE) ? [coin(String(swap.price), client.chainInfo.currencies[0].coinMinimalDenom)] : [];
     // Broadcast tx
     let tx = await client.wasmClient.execute(
       accounts[0].address,
@@ -791,7 +791,7 @@ async function FinishCw20(id, swap, denom = '', client = null) {
         token_id: swap.token_id,
         expires: swap.expires,
         price: swap.price,
-        swap_type: SALE
+        swap_type: swap.swap_type
       }
     };
     // Sender
