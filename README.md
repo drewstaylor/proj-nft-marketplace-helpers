@@ -17,7 +17,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [GetOffers](./marketplace-contract/marketplace.js#L222-L288): Fetch all swaps of type `SwapType::Offer`
 
-- [GetListings](./marketplace-contract/marketplace.js#L290-L349): Fetch all swaps of type `SwapType::Offer`
+- [GetListings](./marketplace-contract/marketplace.js#L290-L349): Fetch all swaps of type `SwapType::Sale`
 
 - [ListingsOfToken](./marketplace-contract/marketplace.js#L351-L416): Fetch all swaps for a specific token ID; can optionally be filtered by swap type.
 
