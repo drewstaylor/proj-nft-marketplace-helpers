@@ -38,7 +38,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [Cancel](./marketplace-contract/marketplace.js#L817-L7862): Cancel a swap
 
-- [Update](./marketplace-contract/marketplace.js#L864-L7896): Update either the price, expiration, or both price and expiration of a swap.
+- [Update](./marketplace-contract/marketplace.js#L854-L7896): Update either the price, expiration, or both price and expiration of a swap.
 
 - [Some addtional admin only transactions](./marketplace-contract/marketplace.js#L898-L7911)
 
