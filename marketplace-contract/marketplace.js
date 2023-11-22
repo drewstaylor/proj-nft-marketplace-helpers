@@ -631,10 +631,11 @@ async function SwapsByPaymentType(cw20 = false, type = SALE, page = 0, limit = 1
  * @param {String} token_id : token_id (domain) to be sold in the swap
  * @param {Number} expiration : A timestamp (nanosecond precision) after which the swap is invalid
  * @param {Number} price : A price, in a cw20 denom, to be paid by the buyer
+ * @param {String} swap_type : Either 'Sale' or 'Offer'
  * @param {SigningCosmWasmClient} client? :  (Optional) instance of signing client
  * @returns {ExecuteResult} : Returns success or error result
  */
-async function CreateNative(id, token_id, expiration, price, client = null) {
+async function CreateNative(id, token_id, expiration, price, swap_type = SALE, client = null) {
   if (!client) client = await Client();
 
   let cost = coin(String(price), client.chainInfo.currencies[0].coinMinimalDenom);
@@ -650,7 +651,7 @@ async function CreateNative(id, token_id, expiration, price, client = null) {
           at_time: String(expiration)
         },
         price: cost.amount,
-        swap_type: SALE
+        swap_type: swap_type,
       }
     };
     // Sender
@@ -727,10 +728,11 @@ async function FinishNative(id, swap, client = null) {
  * @param {Number} expiration : A timestamp (nanosecond precision) after which the swap is invalid
  * @param {Number} price : A price, in `aarch`, to be paid by the buyer
  * @param {String} denom? : (Optional) denom of payment cw20; only used for memo
+ * @param {String} swap_type : Either 'Sale' or 'Offer'
  * @param {SigningCosmWasmClient} client? :  (Optional) instance of signing client
  * @returns {ExecuteResult} : Returns success or error result
  */
-async function CreateCw20(id, cw20_contract, token_id, expiration, price, denom = '', client = null) {
+async function CreateCw20(id, cw20_contract, token_id, expiration, price, denom = '', swap_type = SALE, client = null) {
   if (!client) client = await Client();
 
   try {
@@ -744,7 +746,7 @@ async function CreateCw20(id, cw20_contract, token_id, expiration, price, denom 
           at_time: expiration
         },
         price: String(price),
-        swap_type: SALE
+        swap_type: swap_type
       }
     };
     // Sender
