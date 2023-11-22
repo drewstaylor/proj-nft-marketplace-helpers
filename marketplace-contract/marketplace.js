@@ -26,7 +26,7 @@ const OFFER = "Offer";
  * 
  *    fees: 0.1,  // The marketplace fee percentage (e.g. 0.1 == 10%)
  *                // when this value is greater than 0, the marketplace
- *                // keeps a percentage of all swaps payments 
+ *                // keeps a percentage of all swap payments 
  *                // (true for both native ARCH and cw20 payments)
  *                
  * }
