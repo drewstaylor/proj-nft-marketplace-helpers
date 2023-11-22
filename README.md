@@ -7,7 +7,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 #### Queries
 - [Config](./marketplace-contract/marketplace.js#L12-L50): Get basic information about the marketplace, such as which NFT collections are allowed to list in the marketplace, and what percentage of fees are retained from Sales and Offers.
 
-- [List](./marketplace-contract/marketplace.js#L53-L83): Get a paginated list of all swap ids. Note that this entry point's pagination is identical to cw721 enumerability (e.g. `start_after` strings), but since that is sometimes problematic (e.g. for non-numeric `token_ids` all other paginated entry points use numeric page numbers (not `start_after` strings).
+- [List](./marketplace-contract/marketplace.js#L53-L83): Get a paginated list of all swap ids. Pagination is identical to cw721 enumerability (e.g. `start_after` strings), but all other paginated entry points use numeric page numbers (not `start_after` strings).
 
 - [Details](./marketplace-contract/marketplace.js#L85-L127): Fetch details for a specific swap
 
