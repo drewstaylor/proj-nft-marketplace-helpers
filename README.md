@@ -13,7 +13,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [SwapsOf](./marketplace-contract/marketplace.js#L129-L192): Get all swaps created by a specific address
 
-- [GetTotal](./marketplace-contract/marketplace.js#L194-L220): Get the total number of swaps for a `SwapType` ('Sale' / 'Offer'). If necessary, you can request both and sum them to derive the total number of all swaps.
+- [GetTotal](./marketplace-contract/marketplace.js#L194-L220): Get the total number of swaps for a `SwapType` ('Sale' / 'Offer').
 
 - [GetOffers](./marketplace-contract/marketplace.js#L222-L288): Fetch all swaps of type `SwapType::Offer`
 
