@@ -32,7 +32,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [FinishNative](./marketplace-contract/marketplace.js#L677-L722): Finalize and consume a swap paying with native ARCH.
 
-- [CreateCw20](./marketplace-contract/marketplace.js#L724-L770): Create a swap using a cw20 token as payment. Can be used to create both 'Sales' and 'Offer' swaps. Note that creating an 'Offer' tx will fail if swap creator has not approved the cw20 token contract to spend their NFT (e.g. see [cw20](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md) `IncreaseAllowance{spender, amount, expires}`). 
+- [CreateCw20](./marketplace-contract/marketplace.js#L724-L770): Create a swap using a cw20 token as payment. Can be used to create both 'Sale' and 'Offer' swaps. Note that creating an 'Offer' tx will fail if swap creator has not approved the cw20 token contract to spend their NFT (e.g. see [cw20](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md) `IncreaseAllowance{spender, amount, expires}`). 
 
 - [FinishCw20](./marketplace-contract/marketplace.js#L772-L7815): Finalize and consume a swap paying with cw20 tokens
 
