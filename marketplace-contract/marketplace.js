@@ -100,7 +100,7 @@ async function Details(id = null, client = null) {
  *            {
  *                "creator": "archway1f395p0gg67mmfd5zcqvpnp9cxnu0hg6r9hfczq",
  *                "nft_contract": "archway1cf5rq0amcl5m2flqrtl4gw2mdl3zdec9vlp5hfa9hgxlwnmrlazsdycu4l",   // Contract address of the cw721 
- *                                                                                                        // of the token being swapped
+ *                                                                                                        // that is being swapped
  *                "payment_token": null,      // No payment token means payment is in Native ARCH
  *                "token_id": "1",            // ID of the token being swapped
  *                "expires": {
@@ -194,7 +194,7 @@ async function GetTotal(type = SALE, client = null) {
  *            {
  *                "creator": "archway1f395p0gg67mmfd5zcqvpnp9cxnu0hg6r9hfczq",
  *                "nft_contract": "archway1cf5rq0amcl5m2flqrtl4gw2mdl3zdec9vlp5hfa9hgxlwnmrlazsdycu4l",   // Contract address of the cw721 
- *                                                                                                        // of the token being swapped
+ *                                                                                                        // that is being swapped
  * 
  *                "payment_token": "archway1jcahx3ruep9zwrhefwkdnuxrhk44w9zedeef0eg9pg3wjj66zyps9z2jrv",  // cw20 contract used for payment when settling the swap
  *
@@ -259,7 +259,7 @@ async function GetOffers(page = 0, limit = 10, client = null) {
  *            {
  *                "creator": "archway1f395p0gg67mmfd5zcqvpnp9cxnu0hg6r9hfczq",
  *                "nft_contract": "archway1cf5rq0amcl5m2flqrtl4gw2mdl3zdec9vlp5hfa9hgxlwnmrlazsdycu4l",   // Contract address of the cw721 
- *                                                                                                        // of the token being swapped
+ *                                                                                                        // that is being swapped
  *                "payment_token": null,      // No payment token means payment is in Native ARCH
  *                "token_id": "1",            // ID of the token being swapped
  *                "expires": {
@@ -322,7 +322,7 @@ async function GetListings(page = 0, limit = 10, client = null) {
  *            {
  *                "creator": "archway1f395p0gg67mmfd5zcqvpnp9cxnu0hg6r9hfczq",
  *                "nft_contract": "archway1cf5rq0amcl5m2flqrtl4gw2mdl3zdec9vlp5hfa9hgxlwnmrlazsdycu4l",   // Contract address of the cw721 
- *                                                                                                        // of the token being swapped
+ *                                                                                                        // that is being swapped
  *                "payment_token": null,      // No payment token means payment is in Native ARCH
  *                "token_id": "1",            // ID of the token being swapped
  *                "expires": {
@@ -393,7 +393,7 @@ async function ListingsOfToken(token_id = null, type = null, page = 0, limit = 1
         {
             "creator": "archway1fkftxkgv9evck6vkye9t8qcfmzjpyazgxuc03a",
             "nft_contract": "archway1cf5rq0amcl5m2flqrtl4gw2mdl3zdec9vlp5hfa9hgxlwnmrlazsdycu4l",   // Contract address of the cw721 
-                                                                                                    // of the token being swapped
+                                                                                                    // that is being swapped
             "payment_token": null, // No payment token means payment is in Native ARCH
 
             "token_id": "1",
@@ -464,7 +464,7 @@ async function SwapsByPrice(min = null, max = null, type = SALE,page = 0, limit 
  *            {
  *                "creator": "archway1f395p0gg67mmfd5zcqvpnp9cxnu0hg6r9hfczq",
  *                "nft_contract": "archway1cf5rq0amcl5m2flqrtl4gw2mdl3zdec9vlp5hfa9hgxlwnmrlazsdycu4l",   // Contract address of the cw721 
- *                                                                                                        // of the token being swapped
+ *                                                                                                        // that is being swapped
  *                "payment_token": null,      // No payment token means payment is in Native ARCH
  *                "token_id": "1",            // ID of the token being swapped
  *                "expires": {
@@ -532,7 +532,7 @@ async function SwapsByDenom(payment_token = null, type = SALE, page = 0, limit =
  *            {
  *                "creator": "archway1f395p0gg67mmfd5zcqvpnp9cxnu0hg6r9hfczq",
  *                "nft_contract": "archway1cf5rq0amcl5m2flqrtl4gw2mdl3zdec9vlp5hfa9hgxlwnmrlazsdycu4l",   // Contract address of the cw721 
- *                                                                                                        // of the token being swapped
+ *                                                                                                        // that is being swapped
  *                "payment_token": null,      // No payment token means payment is in Native ARCH
  *                "token_id": "1",            // ID of the token being swapped
  *                "expires": {
