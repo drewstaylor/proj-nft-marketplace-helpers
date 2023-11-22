@@ -34,9 +34,9 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [CreateCw20](./marketplace-contract/marketplace.js#L724-L770): Create a swap using a cw20 token as payment. Can be used to create both 'Sale' and 'Offer' swaps. Note that creating an 'Offer' tx will fail if swap creator has not approved the cw20 token contract to spend their NFT (e.g. see [cw20](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md) `IncreaseAllowance{spender, amount, expires}`). 
 
-- [FinishCw20](./marketplace-contract/marketplace.js#L772-L7815): Finalize and consume a swap paying with cw20 tokens
+- [FinishCw20](./marketplace-contract/marketplace.js#L772-L815): Finalize and consume a swap paying with cw20 tokens
 
-- [Cancel](./marketplace-contract/marketplace.js#L817-L7862): Cancel a swap
+- [Cancel](./marketplace-contract/marketplace.js#L817-L852): Cancel a swap
 
 - [Update](./marketplace-contract/marketplace.js#L854-L896): Update either the price, expiration, or both price and expiration of a swap.
 
