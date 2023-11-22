@@ -168,7 +168,7 @@ async function Details(id = null, client = null) {
  *                        // (e.g. for requesting other pages & determining the last page)
  *    }
  */
-async function SwapsOf(address = null, type = SALE,page = 0, limit = 10, client = null) {
+async function SwapsOf(address = null, type = SALE, page = 0, limit = 10, client = null) {
   if (!client) client = await Client();
   try {
     let entrypoint = {
