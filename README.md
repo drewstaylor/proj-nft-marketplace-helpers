@@ -23,7 +23,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [SwapsByPrice](./marketplace-contract/marketplace.js#L418-L486): Fetch all swaps within a given price range
 
-- [SwapsByDenom](./marketplace-contract/marketplace.js#L488-L556): Fetch all swaps for a given denom. Works for both native and cw20 denomes (e.g. ARCH, wARCH, etc.).
+- [SwapsByDenom](./marketplace-contract/marketplace.js#L488-L556): Fetch all swaps for a given denom. Works for both native and cw20 denoms (e.g. ARCH, wARCH, etc.).
 
 - [SwapsByPaymentType](./marketplace-contract/marketplace.js#L558-L624): Fetch all swaps by payment type (e.g. either cw20 payments or native ARCH)
 
