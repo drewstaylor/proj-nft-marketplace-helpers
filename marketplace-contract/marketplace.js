@@ -19,7 +19,7 @@ const OFFER = "Offer";
  *                                                                // such as changing the fee percentage, or adding 
  *                                                                // and removing NFT contracts to/from the curated list
  *                                                                // of contracts allowed to swap in this marketplace
- *    "denom": String,
+ *    "denom": "aarch",
  *    "cw721": ["contract1_address", "contract2_address"],  // An array of contract addresses. Any NFT
  *                                                          // belonging to a contract not in this list cannot
  *                                                          // be listed for sale (e.g. curated marketplace)
