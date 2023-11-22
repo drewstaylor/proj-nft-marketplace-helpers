@@ -10,6 +10,47 @@ const OFFER = "Offer";
 // Queries
 
 /**
+ * Query marketplace config, which returns basic information and parameters about the marketplace
+ * @returns {QueryResult} : Returns the Config of the marketplace
+ * 
+ * Example Return: 
+ * {
+ *    "admin": "archway1f395p0gg67mmfd5zcqvpnp9cxnu0hg6r9hfczq",  // An admin who can make changes to the contract
+ *                                                                // such as changing the fee percentage, or adding 
+ *                                                                // and removing NFT contracts to/from the curated list
+ *                                                                // of contracts allowed to swap in this marketplace
+ *    "denom": String,
+ *    "cw721": ["contract1_address", "contract2_address"],  // An array of contract addresses. Any NFT
+ *                                                          // belonging to a contract not in this list cannot
+ *                                                          // be listed for sale (e.g. curated marketplace)
+ * 
+ *    fees: 0.1,  // The marketplace fee percentage (e.g. 0.1 == 10%)
+ *                // when this value is greater than 0, the marketplace
+ *                // keeps a percentage of all swaps payments 
+ *                // (true for both native ARCH and cw20 payments)
+ *                
+ * }
+ */
+async function Config(client = null) {
+  if (!client) client = await Client();
+  try {
+    let entrypoint = {
+      config: {}
+    };
+
+    let query = await client.wasmClient.queryClient.wasm.queryContractSmart(
+      MARKETPLACE_CONTRACT,
+      entrypoint
+    );
+    return query;
+  } catch(e) {
+    console.error(e);
+    return {};
+  }
+}
+
+
+/**
  * List swaps (paginated)
  * @param {String} start? : (Optional) Start paginated request after this swap id. Default null
  * @param {Number} limit? : (Optional) Amount of swaps per paginated request. Default limit 10, maximum limit 30
@@ -852,18 +893,34 @@ async function Update(id, expiration, price, client = null) {
   }
 }
 
+/**
+ * Additional admin only txs not covered in this example file:
+ * ExecuteMsg::UpdateConfig
+ * Used to update config parameters, e.g. Marketplace fees or Admin address
+ * 
+ * ExecuteMsg::AddNft
+ * Add an NFT collection contract to the curated list of contracts allowed to list NFTs
+ * 
+ * ExecuteMsg::RemoveNft
+ * Remove an NFT collection contract to the curated list of contracts allowed to list NFTs
+ * 
+ * ExecuteMsg::Withdraw
+ * Withdraw funds from the contract (e.g. accrued marketplace fees)
+ */
+
 const Query = {
-    List,
-    Details,
-    SwapsOf,
-    GetTotal,
-    GetOffers,
-    GetListings,
-    ListingsOfToken,
-    SwapsByPrice,
-    SwapsByDenom,
-    SwapsByPaymentType
-  };
+  Config,
+  List,
+  Details,
+  SwapsOf,
+  GetTotal,
+  GetOffers,
+  GetListings,
+  ListingsOfToken,
+  SwapsByPrice,
+  SwapsByDenom,
+  SwapsByPaymentType
+};
 
 const Execute = {
   CreateNative,
