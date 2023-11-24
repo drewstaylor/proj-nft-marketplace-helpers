@@ -51,13 +51,13 @@ Example response:
 
 `Reveal{token_id}` - Reveal metadata of a specific `token_id`. Fails if tx sender does not own `token_id` or hasn't approved minting contract to make changes to the NFT (see [cw721 Approve{spender, token_id, expires}](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md)). `token_id` is a string.
 
-#### Artist Only
+#### Artist Only txs
 
 These can only be called by the `artist` account. 
 
 `Withdraw{amount}` - Withdraw a specific `amount` of funds collecting from minting to the `artist` acount. `amount` is a `Uint128` (e.g. `aarch`, `aconst`, etc.) 
 
-#### Admin Only
+#### Admin Only txs
 
 These can only be called by the `owner` account
 
