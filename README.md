@@ -47,4 +47,4 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 See [cw721.md](./cw721-contract/cw721.md)
 
 ## Minting & Revealing Contract
-TBD when Minting contract is finished
+See [whitelist-minter.md](./minter-contract/whitelist-minter.md)
