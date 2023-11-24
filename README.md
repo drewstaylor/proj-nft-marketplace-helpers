@@ -40,7 +40,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [Update](./marketplace-contract/marketplace.js#L854-L896): Update either the price, expiration, or both price and expiration of a swap.
 
-- [Some addtional admin only transactions](./marketplace-contract/marketplace.js#L898-L7911)
+- [Some addtional admin only transactions](./marketplace-contract/marketplace.js#L898-L911)
 
 
 ## Cw721 Contracts
