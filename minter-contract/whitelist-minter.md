@@ -47,8 +47,9 @@ Example response:
 
 ## Transactions
 
-- `Mint{}` - Mint NFT. If `whitelist_expiration` is not expired, tx sender must be a member of `whitelist`. Fails if minting would `supply`.
-- `Reveal{token_id}` - Reveal metadata of a specific `token_id`. Fails if tx sender does not own `token_id` or hasn't approved minting contract to make changes to the NFT (see [cw721 Approve{spender, token_id, expires}](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md))
+`Mint{}` - Mint NFT. If `whitelist_expiration` is not expired, tx sender must be a member of `whitelist`. Fails if minting would `supply`.
+
+`Reveal{token_id}` - Reveal metadata of a specific `token_id`. Fails if tx sender does not own `token_id` or hasn't approved minting contract to make changes to the NFT (see [cw721 Approve{spender, token_id, expires}](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md))
 
 #### Artist Only
 
