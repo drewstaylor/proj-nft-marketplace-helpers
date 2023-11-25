@@ -28,11 +28,11 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 - [SwapsByPaymentType](./marketplace-contract/marketplace.js#L558-L624): Fetch all swaps by payment type (e.g. either cw20 payments or native ARCH)
 
 #### Transactions
-- [CreateNative](./marketplace-contract/marketplace.js#L628-L675): Create a swap for native ARCH. Can be used to create both 'Sale' and 'Offer' swaps. Note that creating a 'Sale' tx will fail if swap creator has not approved the marketplace to spend their NFT (e.g. see [cw721](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md) `Approve{spender, token_id, expires}`).
+- [CreateNative](./marketplace-contract/marketplace.js#L628-L675): Create a swap for native ARCH. Can be used to create both 'Sale' and 'Offer' swaps.
 
-- [FinishNative](./marketplace-contract/marketplace.js#L677-L722): Finalize and consume a swap paying with native ARCH.
+- [FinishNative](./marketplace-contract/marketplace.js#L677-L722): Finalize and consume a swap paying with native ARCH. 'Sale' txs will fail if cw721 contract has not approved marketplace contract to spend swap creator's NFT (see [cw721](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md) `Approve{spender, token_id, expires}`). 'Offer' txs will fail if swap creator has not approved cw20 token contract to spend swap creator's cw20s (see [cw20](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md) `IncreaseAllowance{spender, amount, expires}`).
 
-- [CreateCw20](./marketplace-contract/marketplace.js#L724-L770): Create a swap using a cw20 token as payment. Can be used to create both 'Sale' and 'Offer' swaps. Note that creating an 'Offer' tx will fail if swap creator has not approved the cw20 token contract to spend their NFT (e.g. see [cw20](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md) `IncreaseAllowance{spender, amount, expires}`). 
+- [CreateCw20](./marketplace-contract/marketplace.js#L724-L770): Create a swap using a cw20 token as payment. Can be used to create both 'Sale' and 'Offer' swaps.
 
 - [FinishCw20](./marketplace-contract/marketplace.js#L772-L815): Finalize and consume a swap paying with cw20 tokens
 
