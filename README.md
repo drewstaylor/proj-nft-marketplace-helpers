@@ -34,7 +34,7 @@ See [marketplace.js](./marketplace-contract/marketplace.js)
 
 - [CreateCw20](./marketplace-contract/marketplace.js#L724-L770): Create a swap using a cw20 token as payment. Can be used to create both 'Sale' and 'Offer' swaps. 
 
-- [FinishCw20](./marketplace-contract/marketplace.js#L772-L815): Finalize and consume a swap paying with cw20 tokens. Fails if cw20 contract has not been approved spend cw20 owner's cw20s (see [cw20](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md) `IncreaseAllowance{spender, amount, expires}`). Fails if cw721 contract has not approved marketplace contract to spend NFT owner's NFT (see [cw721](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md) `Approve{spender, token_id, expires}`).
+- [FinishCw20](./marketplace-contract/marketplace.js#L772-L815): Finalize and consume a swap paying with cw20 tokens. Fails if cw20 contract has not approved marketplace contract to spend cw20 owner's cw20s (see [cw20](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md) `IncreaseAllowance{spender, amount, expires}`). Fails if cw721 contract has not approved marketplace contract to spend NFT owner's NFT (see [cw721](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md) `Approve{spender, token_id, expires}`).
 
 - [Cancel](./marketplace-contract/marketplace.js#L817-L852): Cancel a swap
 
