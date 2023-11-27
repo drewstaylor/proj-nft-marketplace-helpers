@@ -2,7 +2,7 @@
 
 Permissioned contract for secondary NFT trading, supporting sale swaps and offer swaps. NFT contract must be added to permissioned list of contracts to be able to list and swap NFTs of that collection.
 
-See [marketplace.js](./marketplace-contract/marketplace.js)
+See [marketplace.js](./marketplace.js)
 
 ## Queries
 - [Config{}](./marketplace.js#L12-L50): Get basic information about the marketplace, such as which NFT collections are allowed to list in the marketplace, and what percentage of fees are retained from Sales and Offers.
