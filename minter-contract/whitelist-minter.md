@@ -39,7 +39,8 @@ Example response:
     
     "initialized": bool,    // true if contract has been initialized, else false 
                             // contract will be initialized by `owner` when they've  
-                            // sent an `Initialize` tx
+                            // sent an `Initialize` tx. If set to false, no users
+                            // can mint or reveal
 }
 ```
 
