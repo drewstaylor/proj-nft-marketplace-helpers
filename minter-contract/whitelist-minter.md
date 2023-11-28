@@ -18,10 +18,7 @@ Example response:
                     // and withdraws funds accrued from minting
 
     "supply": u64,  // max possible mints
-    
-    "whitelist_expiration": u64,    // a date in seconds, after which whitelisting
-                                    // permissions no longer enforced (e.g. public minting)
-    
+
     "whitelist_allowance": u64, // max nfts that can be minted by `whitelist` members
     "whitelist": Vec<Addr>,     // array of whitelisted addresses
     
@@ -33,6 +30,7 @@ Example response:
     "reveal": bool,     // true if revealing enabled, else false 
                         // revealing will be enabled by `owner`
                         // when they've sent an `EnableReveal` tx
+                        // if false, only whitelist members can mint
 
     "price": Uint128,       // price of minting
     
@@ -47,7 +45,7 @@ Example response:
 
 ## Transactions
 
-`Mint{}` - Mint NFT. If `whitelist_expiration` is not expired, tx sender must be a member of `whitelist`. Fails if minting would `supply`.
+`Mint{}` - Mint NFT. If `reveal` is false, tx sender must be a member of `whitelist`. Fails if minting would `supply`.
 
 `Reveal{token_id}` - Reveal metadata of a specific `token_id`. Fails if tx sender does not own `token_id` or hasn't approved minting contract to make changes to the NFT (see [cw721 Approve{spender, token_id, expires}](https://github.com/CosmWasm/cw-nfts/blob/main/packages/cw721/README.md)). `token_id` is a string.
 
