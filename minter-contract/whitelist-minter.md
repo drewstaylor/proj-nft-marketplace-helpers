@@ -64,4 +64,4 @@ These can only be called by the `owner` account
 
 `EnableReveal{}` - Enables revealing metadata and expires whitelist minting (e.g. public minting begins)
 
-`UpdateConfig{config}` - Update the contract's configuration parameters. `config` is a `State` struct.
+`UpdateConfig{config}` - Update the contract's configuration parameters. `config` is a `State` struct. Propererties of the `State` struct are identical to the query response from `Config{}` (see queries)
