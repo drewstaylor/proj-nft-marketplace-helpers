@@ -62,6 +62,6 @@ These can only be called by the `owner` account
 
 `Initialize{}` - Enables minting and mints all reserved NFTs to the `artist` account
 
-`EnableReveal{}` - Enables revealing metadata. Fails if `whitelist_expiration` is not expired
+`EnableReveal{}` - Enables revealing metadata and expires whitelist minting (e.g. public minting begins)
 
 `UpdateConfig{config}` - Update the contract's configuration parameters. `config` is a `State` struct.
