@@ -27,18 +27,18 @@ Example response:
                                     // that will be revealed without using randomness
                                     // algorithm 
     
-    "reveal": bool,     // true if revealing enabled, else false 
-                        // revealing will be enabled by `owner`
-                        // when they've sent an `EnableReveal` tx
-                        // if false, only whitelist members can mint
+    "reveal": bool,     // true if revealing enabled, else false. 
+                        // Revealing will be enabled by `owner`
+                        // when they've sent an `EnableReveal` tx.
+                        // If false, only whitelist members can mint
 
     "price": Uint128,       // price of minting
     
     "name_prefix": String,  // a naming covention used during 
                             // randomized metadata creation
     
-    "initialized": bool,    // true if contract has been initialized, else false 
-                            // contract will be initialized by `owner` when they've  
+    "initialized": bool,    // true if contract has been initialized, else false. 
+                            // Contract will be initialized by `owner` when they've  
                             // sent an `Initialize` tx. If set to false, no users
                             // can mint or reveal
 }
