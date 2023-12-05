@@ -13,13 +13,13 @@ See [marketplace.js](./marketplace.js)
 
 - [SwapsOf{address, swap_type, page, limit}](./marketplace.js#L129-L192): Get all swaps created by a specific address
 
-- [GetTotal{swap_type}](./marketplace.js#L194-L220): Get the total number of swaps for a `SwapType` ('Sale' / 'Offer').
+- [GetTotal{swap_type}](./marketplace.js#L194-L220): `swap_type` is optional. Get the total number of swaps, or the total number of swaps for a `SwapType` ('Sale' / 'Offer').
 
 - [GetOffers{page, limit}](./marketplace.js#L222-L288): Fetch all swaps of type `SwapType::Offer`
 
 - [GetListings{page, limit}](./marketplace.js#L290-L349): Fetch all swaps of type `SwapType::Sale`
 
-- [ListingsOfToken{token_id, swap_type, page, limit}](./marketplace.js#L351-L416): Fetch all swaps for a specific token ID; can optionally be filtered by swap type.
+- [ListingsOfToken{token_id, cw721, swap_type, page, limit}](./marketplace.js#L351-L416): Fetch all swaps for a specific token ID; can optionally be filtered by swap type.
 
 - [SwapsByPrice{min, max, swap_type, page, limit}](./marketplace.js#L418-L486): Fetch all swaps within a given price range
 
