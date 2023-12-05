@@ -192,19 +192,19 @@ async function SwapsOf(address = null, type = SALE, page = 0, limit = 10, client
 }
 
 /**
- * Count the total number of swaps for a `SwapType` ('Sale' / 'Offer')
- * @param {String} type : Either SALE ('Sale') or OFFER ('Offer')
+ * Count the total number of swaps, or the total number of swaps for a `SwapType` ('Sale' / 'Offer')
+ * @param {String} type : Optional filter for `SwapType`. Can be Either SALE ('Sale') or OFFER ('Offer')
  * @param {SigningCosmWasmClient} client? :  (Optional) instance of signing client
  * @returns {QueryResult | Number} : Returns a number (unsigned integer)
  * 
  * Example Return: `258`
  */
-async function GetTotal(type = SALE, client = null) {
+async function GetTotal(swap_type = SALE, client = null) {
   if (!client) client = await Client();
   try {
     let entrypoint = {
       get_total: {
-        swap_type: type
+        swap_type
       }
     };
 
@@ -351,6 +351,7 @@ async function GetListings(page = 0, limit = 10, client = null) {
 /**
  * Fetch all swaps for a specific token ID. Can be filtered by swap type.
  * @param {String} token_id 
+ * @param {String} cw721 : Collection contract used for finding the `token_id`
  * @param {String} type? : Optional filter to limit results by swap type; must be either "Sale" or "Offer" (or `null` to show all results)
  * @param {Number} page : Results page to be returned; starts at 0. Requesting a non-existent page returns an error.
  * @param {Number} limit : Maximum quantity of results to return. An integer greater than 0 and less than 100.
@@ -388,22 +389,21 @@ async function GetListings(page = 0, limit = 10, client = null) {
  *            }
  *        ],
  *        "page": 0,      // Note that pagination pages are 0 indexed
- *        "total": "2"    // Note that pagination returns the total value of swaps 
- *                        // (e.g. for requesting other pages & determining the last page)
+ *        "total": "2"    // Note that pagination returns the total value of swaps (e.g. for requesting other pages & determining the last page)
  *    }
  */
-async function ListingsOfToken(token_id = null, type = null, page = 0, limit = 10, client = null) {
+async function ListingsOfToken(token_id = null, cw721 = null, type = null, page = 0, limit = 10, client = null) {
   if (!client) client = await Client();
   try {
     let entrypoint = {
       listings_of_token: {
-        token_id: token_id,
-        page: page,
-        limit: limit
+        token_id,
+        cw721,
+        page,
+        limit
       }
     };
     if (type) entrypoint.listings_of_token.swap_type = type;
-
     let query = await client.wasmClient.queryClient.wasm.queryContractSmart(
       MARKETPLACE_CONTRACT,
       entrypoint
